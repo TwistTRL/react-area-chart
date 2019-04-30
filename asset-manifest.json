@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/react-area-chart/static/css/main.fb272593.chunk.css",
-    "main.js": "/react-area-chart/static/js/main.2ce05db0.chunk.js",
-    "main.js.map": "/react-area-chart/static/js/main.2ce05db0.chunk.js.map",
+    "main.js": "/react-area-chart/static/js/main.c6a72325.chunk.js",
+    "main.js.map": "/react-area-chart/static/js/main.c6a72325.chunk.js.map",
     "runtime~main.js": "/react-area-chart/static/js/runtime~main.59682ac3.js",
     "runtime~main.js.map": "/react-area-chart/static/js/runtime~main.59682ac3.js.map",
-    "static/js/2.0704e073.chunk.js": "/react-area-chart/static/js/2.0704e073.chunk.js",
-    "static/js/2.0704e073.chunk.js.map": "/react-area-chart/static/js/2.0704e073.chunk.js.map",
+    "static/js/2.9760d894.chunk.js": "/react-area-chart/static/js/2.9760d894.chunk.js",
+    "static/js/2.9760d894.chunk.js.map": "/react-area-chart/static/js/2.9760d894.chunk.js.map",
     "index.html": "/react-area-chart/index.html",
-    "precache-manifest.cc36e86646791d2b38ac9133803db9d3.js": "/react-area-chart/precache-manifest.cc36e86646791d2b38ac9133803db9d3.js",
+    "precache-manifest.3092c5a7ee1a6c180575987f95913abd.js": "/react-area-chart/precache-manifest.3092c5a7ee1a6c180575987f95913abd.js",
     "service-worker.js": "/react-area-chart/service-worker.js",
     "static/css/main.fb272593.chunk.css.map": "/react-area-chart/static/css/main.fb272593.chunk.css.map"
   }
