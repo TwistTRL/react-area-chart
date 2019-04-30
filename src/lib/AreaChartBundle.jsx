@@ -5,6 +5,7 @@ import AreaChartLeftPanel from "./AreaChartLeftPanel";
 import AreaChart from "./AreaChart";
 import AreaChartYAxis from "./AreaChartYAxis";
 import DateVerticalGridLines from "./DateVerticalGridLines";
+import PropTypes from 'prop-types';
 
 const minY = 0;
 const maxY = 200;
@@ -130,6 +131,17 @@ class AreaChartBundle extends PureComponent {
             </PlotContainer>
         )
     }
+}
+
+AreaChartBundle.propTypes = {
+    data: PropTypes.array.isRequired,
+    dtWindow: PropTypes.array.isRequired,
+    width: PropTypes.number.isRequired,
+    height: PropTypes.number.isRequired,
+    yRange: PropTypes.array.isRequired,
+    label: PropTypes.string.isRequired,
+    colorString: PropTypes.string.isRequired,
+    areaChartBackgroundColor: PropTypes.string.isRequired
 }
 
 export default AreaChartBundle

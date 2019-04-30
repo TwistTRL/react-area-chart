@@ -18,7 +18,7 @@ class AreaChartLeftPanel extends PureComponent {
                 backgroundColor: colorString
             },
             areaChartLabel: {
-                marginLeft: "25%",
+                marginLeft: "15%",
                 lineHeight: panelHeight + "px",
                 color: '#373c62',
                 fontWeight: '800',
