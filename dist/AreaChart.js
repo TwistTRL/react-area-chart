@@ -38,13 +38,14 @@ var AreaChart = function (_PureComponent) {
             var maxX = _this.props.dtWindow[1] / 1000;
             var height = _this.canvasH;
             var data = _this.props.data;
+            var yRange = _this.props.yRange;
 
             // first plot the stroke
             ctx.lineWidth = 4;
             ctx.strokeStyle = "rgba(128,128,128,0.7)";
             data.forEach(function (d) {
                 domX = (0, _PlottingUtils.toDomXCoord_Linear)(_this.canvasW, minX, maxX, d["time"]);
-                var domY = (0, _PlottingUtils.toDomYCoord_Linear)(_this.canvasH, 12, 43, d["temp"]);
+                var domY = (0, _PlottingUtils.toDomYCoord_Linear)(_this.canvasH, yRange[0] - 5, yRange[1] + 5, d["value"]);
                 ctx.lineTo(domX, domY);
             });
             ctx.stroke();
@@ -67,22 +68,22 @@ var AreaChart = function (_PureComponent) {
     _createClass(AreaChart, [{
         key: "componentDidMount",
         value: function componentDidMount() {
-            this.cpbChartCanvas = this.refs.cpbChartCanvas;
-            this.cpbChartCtx = this.cpbChartCanvas.getContext("2d");
-            this.drawCPBChart(this.cpbChartCtx);
+            this.areaChartCanvas = this.refs.areaChartCanvas;
+            this.areaChartCtx = this.areaChartCanvas.getContext("2d");
+            this.drawCPBChart(this.areaChartCtx);
         }
     }, {
         key: "componentDidUpdate",
         value: function componentDidUpdate() {
-            this.drawCPBChart(this.cpbChartCtx);
+            this.drawCPBChart(this.areaChartCtx);
         }
     }, {
         key: "render",
         value: function render() {
             // let minXInSecs = minX / 1000, maxXInSecs = maxX / 1000
             return _react2.default.createElement("canvas", {
-                className: "cpb-chart-canvas",
-                ref: "cpbChartCanvas",
+                className: "area-chart-canvas",
+                ref: "areaChartCanvas",
                 width: this.canvasW,
                 height: this.canvasH
             });

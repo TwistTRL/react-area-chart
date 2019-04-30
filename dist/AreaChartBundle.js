@@ -28,6 +28,10 @@ var _DateVerticalGridLines = require("./DateVerticalGridLines");
 
 var _DateVerticalGridLines2 = _interopRequireDefault(_DateVerticalGridLines);
 
+var _propTypes = require("prop-types");
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -111,7 +115,11 @@ var AreaChartBundle = function (_PureComponent) {
                 dtWindow = _props.dtWindow,
                 width = _props.width,
                 height = _props.height,
-                data = _props.data;
+                yRange = _props.yRange,
+                data = _props.data,
+                label = _props.label,
+                colorString = _props.colorString,
+                areaChartBackgroundColor = _props.areaChartBackgroundColor;
 
             var plotWidth = width - LEFT_WIDTH - RIGHT_WIDTH;
             var plotHeight = height - TOP_HEIGHT - BOTTOM_HEIGHT;
@@ -134,7 +142,8 @@ var AreaChartBundle = function (_PureComponent) {
                     backgroundImage: "linear-gradient(to right, black, rgba(255,255,255,0))"
                 },
                 mainPlotWrapDiv: {
-                    zIndex: -1
+                    zIndex: -1,
+                    backgroundColor: areaChartBackgroundColor
                 }
                 // data = this.filterDataToDtWindow(data)
 
@@ -150,8 +159,8 @@ var AreaChartBundle = function (_PureComponent) {
                     _PlotContainers.PlotSubContainer,
                     null,
                     _react2.default.createElement("div", { style: styles.leftPanelGradShadow }),
-                    _react2.default.createElement(_AreaChartLeftPanel2.default, { panelWidth: 200, panelHeight: 50 }),
-                    _react2.default.createElement(_AreaChartYAxis2.default, { canvasH: 50, canvasW: LEFT_WIDTH })
+                    _react2.default.createElement(_AreaChartLeftPanel2.default, { label: label, colorString: colorString, panelWidth: LEFT_WIDTH, panelHeight: height }),
+                    _react2.default.createElement(_AreaChartYAxis2.default, { canvasH: height, canvasW: LEFT_WIDTH, yRange: yRange })
                 ),
                 _react2.default.createElement(
                     "div",
@@ -160,7 +169,7 @@ var AreaChartBundle = function (_PureComponent) {
                         _PlotContainers.PlotSubContainer,
                         null,
                         _react2.default.createElement(_DateVerticalGridLines2.default, { width: plotWidth, height: plotHeight, minX: minXInMSecs, maxX: maxXInMSecs }),
-                        _react2.default.createElement(_AreaChart2.default, { data: data, width: plotWidth, height: plotHeight, dtWindow: dtWindow })
+                        _react2.default.createElement(_AreaChart2.default, { data: data, yRange: yRange, width: plotWidth, height: plotHeight, dtWindow: dtWindow })
                     )
                 ),
                 _react2.default.createElement(_PlotContainers.PlotSubContainer, null),
@@ -173,5 +182,16 @@ var AreaChartBundle = function (_PureComponent) {
 
     return AreaChartBundle;
 }(_react.PureComponent);
+
+AreaChartBundle.propTypes = {
+    data: _propTypes2.default.array.isRequired,
+    dtWindow: _propTypes2.default.array.isRequired,
+    width: _propTypes2.default.number.isRequired,
+    height: _propTypes2.default.number.isRequired,
+    yRange: _propTypes2.default.array.isRequired,
+    label: _propTypes2.default.string.isRequired,
+    colorString: _propTypes2.default.string.isRequired,
+    areaChartBackgroundColor: _propTypes2.default.string.isRequired
+};
 
 exports.default = AreaChartBundle;

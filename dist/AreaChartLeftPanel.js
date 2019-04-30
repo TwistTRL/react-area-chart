@@ -34,46 +34,41 @@ var AreaChartLeftPanel = function (_PureComponent) {
     }
 
     _createClass(AreaChartLeftPanel, [{
-        key: "componentDidMount",
-        value: function componentDidMount() {
-            // this.meterCanvas = this.refs.meterCanvas
-            // this.meterCtx = this.meterCanvas.getContext("2d")
-        }
-    }, {
-        key: "componentDidUpdate",
-        value: function componentDidUpdate() {}
-    }, {
         key: "render",
         value: function render() {
             var _props = this.props,
                 panelHeight = _props.panelHeight,
-                panelWidth = _props.panelWidth;
+                panelWidth = _props.panelWidth,
+                label = _props.label,
+                colorString = _props.colorString;
 
 
             var styles = {
                 leftPanel: {
                     height: panelHeight + "px",
                     width: panelWidth + "px",
-                    backgroundColor: "#fffcec"
+                    backgroundColor: colorString
                 },
-                cpbLabel: {
-                    position: "absolute",
-                    top: "25%",
-                    left: "10%",
+                areaChartLabel: {
+                    marginLeft: "15%",
+                    lineHeight: panelHeight + "px",
                     color: '#373c62',
-                    fontWeight: '800'
+                    fontWeight: '800',
+                    fontFamily: 'MuseoSans, Sans'
                 }
             };
 
             return _react2.default.createElement(
                 "div",
-                { className: "cpb-left-panel",
+                { className: "area-chart-left-panel",
                     style: styles.leftPanel },
                 _react2.default.createElement(
                     "div",
-                    { className: "cpb-label",
-                        style: styles.cpbLabel },
-                    " CPB "
+                    { className: "area-chart-label",
+                        style: styles.areaChartLabel },
+                    " ",
+                    label,
+                    " "
                 )
             );
         }

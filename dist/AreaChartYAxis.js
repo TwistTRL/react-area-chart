@@ -31,7 +31,7 @@ var AreaChartYAxis = function (_PureComponent) {
         };
 
         _this.drawYAxis = function (ctx) {
-            var labels = [36, 18];
+            var yRange = _this.props.yRange;
             // clear canvas
             ctx.canvas.width = ctx.canvas.width;
 
@@ -42,16 +42,16 @@ var AreaChartYAxis = function (_PureComponent) {
             ctx.stroke();
 
             // label styling
-            ctx.font = "600 14px MuseoSans";
+            ctx.font = "600 14px MuseoSans, Sans";
             ctx.textBaseline = "middle";
             ctx.fillStyle = '#373c62';
 
-            for (var i = 0; i < labels.length; i++) {
-                var posDomY = _this.toDomYCoord_Linear(_this.canvasH, 12, 43, labels[i]);
-                // ctx.moveTo(this.canvasW - 10, posDomY)
-                // ctx.lineTo(this.canvasW, posDomY)
-                ctx.fillText(labels[i], _this.canvasW - 25, posDomY);
-            }
+            // draw the label
+            var posDomY = _this.toDomYCoord_Linear(_this.canvasH, yRange[0] - 5, yRange[1] + 5, yRange[0]);
+            ctx.fillText(yRange[0], _this.canvasW - 25, posDomY);
+            posDomY = _this.toDomYCoord_Linear(_this.canvasH, yRange[0] - 5, yRange[1] + 5, yRange[1]);
+            ctx.fillText(yRange[1], _this.canvasW - 25, posDomY);
+
             ctx.stroke();
         };
 
@@ -65,17 +65,16 @@ var AreaChartYAxis = function (_PureComponent) {
     _createClass(AreaChartYAxis, [{
         key: "componentDidMount",
         value: function componentDidMount() {
-            this.cpbYAxisCanvas = this.refs.cpbYAxisCanvas;
-            this.cpbYAxisCtx = this.cpbYAxisCanvas.getContext("2d");
-
-            this.drawYAxis(this.cpbYAxisCtx);
+            this.areaChartYAxisCanvas = this.refs.areaChartYAxisCanvas;
+            this.areaChartYAxisCtx = this.areaChartYAxisCanvas.getContext("2d");
+            this.drawYAxis(this.areaChartYAxisCtx);
         }
     }, {
         key: "componentDidUpdate",
         value: function componentDidUpdate() {
             this.minY = this.props.minY;
             this.maxY = this.props.maxY;
-            this.drawYAxis(this.cpbYAxisCtx);
+            this.drawYAxis(this.areaChartYAxisCtx);
         }
     }, {
         key: "render",
@@ -87,8 +86,8 @@ var AreaChartYAxis = function (_PureComponent) {
             };
 
             return _react2.default.createElement("canvas", {
-                className: "cpb-y-axis",
-                ref: "cpbYAxisCanvas",
+                className: "area-chart-y-axis",
+                ref: "areaChartYAxisCanvas",
                 style: styles.canvas,
                 width: this.canvasW,
                 height: this.canvasH
