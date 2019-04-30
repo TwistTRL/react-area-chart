@@ -70,7 +70,7 @@ class App extends Component {
         setInterval(function () {
             self.simulateDataChange(firstTime)
             firstTime = false
-        }, 1000)
+        }, 100)
     }
 
     handleRemoveBtnCLick() {
@@ -157,7 +157,7 @@ class App extends Component {
                     yRange={yRange}
                     label={label}
                     colorString={colorString}
-                    areaChartBackgroundColor={areaChartBackgroundColor} />
+                    areaChartBackgroundColor={"white"} />
                 <div>
                     {dataClone.reverse().map((d, i) => {
                         return <div key={d.time + i}>{d.value}</div>
