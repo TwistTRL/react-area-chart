@@ -12,9 +12,7 @@ class AreaChartYAxis extends PureComponent {
     componentDidMount() {
         this.areaChartYAxisCanvas = this.refs.areaChartYAxisCanvas
         this.areaChartYAxisCtx = this.areaChartYAxisCanvas.getContext("2d")
-
         this.drawYAxis(this.areaChartYAxisCtx);
-
     }
 
     componentDidUpdate() {
@@ -43,11 +41,11 @@ class AreaChartYAxis extends PureComponent {
         ctx.textBaseline = "middle";
         ctx.fillStyle = '#373c62'
 
-        let posDomY = this.toDomYCoord_Linear(this.canvasH, yRange[0] - yRange[0] * 0.2, yRange[1] + yRange[1] * 0.2, yRange[0])
+        // draw the label
+        let posDomY = this.toDomYCoord_Linear(this.canvasH, yRange[0] - 5, yRange[1] + 5, yRange[0])
         ctx.fillText(yRange[0], this.canvasW - 25, posDomY)
-        posDomY = this.toDomYCoord_Linear(this.canvasH, yRange[0] - yRange[0] * 0.2, yRange[1] + yRange[1] * 0.2, yRange[1])
+        posDomY = this.toDomYCoord_Linear(this.canvasH, yRange[0] - 5, yRange[1] + 5, yRange[1])
         ctx.fillText(yRange[1], this.canvasW - 25, posDomY)
-        
 
         ctx.stroke()
     }

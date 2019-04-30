@@ -38,7 +38,7 @@ class AreaChart extends PureComponent {
         ctx.strokeStyle = "rgba(128,128,128,0.7)"
         data.forEach(d => {
             domX = toDomXCoord_Linear(this.canvasW, minX, maxX, d["time"])
-            let domY = toDomYCoord_Linear(this.canvasH, yRange[0] - yRange[0] * 0.2, yRange[1] + yRange[1] * 0.2, d["value"])
+            let domY = toDomYCoord_Linear(this.canvasH, yRange[0] - 5, yRange[1] + 5, d["value"])
             ctx.lineTo(domX, domY)
         })
         ctx.stroke()

@@ -102,8 +102,8 @@ class AreaChartBundle extends PureComponent {
                 <PlotSubContainer>
                     <div style={styles.leftPanelGradShadow}>
                     </div>
-                    <AreaChartLeftPanel label={label} colorString={colorString} panelWidth={200} panelHeight={50} />
-                    <AreaChartYAxis canvasH={50} canvasW={LEFT_WIDTH} yRange={yRange} />
+                    <AreaChartLeftPanel label={label} colorString={colorString} panelWidth={LEFT_WIDTH} panelHeight={height} />
+                    <AreaChartYAxis canvasH={height} canvasW={LEFT_WIDTH} yRange={yRange} />
                 </PlotSubContainer>
                 {/*Col PLOT*/}
                 <div style={styles.mainPlotWrapDiv}>

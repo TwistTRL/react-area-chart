@@ -8,7 +8,7 @@ class App extends Component {
 
         this.state = {
             data: [
-                { "time": 1509426000, "value": 35 },
+                { "time": 1509426000, "value": 10 },
                 { "time": 1509429600, "value": 34.5 },
                 { "time": 1509433200, "value": 34 },
                 { "time": 1509436800, "value": 33.5 },
