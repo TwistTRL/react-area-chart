@@ -6,64 +6,59 @@ class App extends Component {
     constructor(props) {
         super(props);
 
-        this.dataTypeToColorDict = {
-            MEDS: "#C2EEF8",
-            FLUSHES: "#5DD2EF",
-            TPN: "#84A5D5",
-            FEEDS: "#A3DBDC",
-            lol434ra: "#C13BDA",
-            xbo4334x: "#613BFA"
-        }
-
         this.state = {
             data: [
-                { "time": 1509426000, "temp": 35 },
-                { "time": 1509429600, "temp": 34.5 },
-                { "time": 1509433200, "temp": 34 },
-                { "time": 1509436800, "temp": 33.5 },
-                { "time": 1509440400, "temp": 33 },
-                { "time": 1509444000, "temp": 32.5 },
-                { "time": 1509447600, "temp": 32 },
-                { "time": 1509451200, "temp": 31.5 },
-                { "time": 1509454800, "temp": 31 },
-                { "time": 1509458400, "temp": 30.5 },
-                { "time": 1509462000, "temp": 30 },
-                { "time": 1509465600, "temp": 29.5 },
-                { "time": 1509469200, "temp": 29 },
-                { "time": 1509472800, "temp": 28.5 },
-                { "time": 1509476400, "temp": 28 },
-                { "time": 1509480000, "temp": 27.5 },
-                { "time": 1509483600, "temp": 27 },
-                { "time": 1509487200, "temp": 26.5 },
-                { "time": 1509490800, "temp": 26.4 },
-                { "time": 1509494400, "temp": 26.4 },
-                { "time": 1509498000, "temp": 26.4 },
-                { "time": 1509501600, "temp": 26.5 },
-                { "time": 1509505200, "temp": 26.8 },
-                { "time": 1509508800, "temp": 27 },
-                { "time": 1509512400, "temp": 27.5 },
-                { "time": 1509516000, "temp": 28 },
-                { "time": 1509519600, "temp": 28.5 },
-                { "time": 1509523200, "temp": 29 },
-                { "time": 1509526800, "temp": 29.5 },
-                { "time": 1509530400, "temp": 30 },
-                { "time": 1509534000, "temp": 30.5 },
-                { "time": 1509537600, "temp": 31 },
-                { "time": 1509541200, "temp": 31.5 },
-                { "time": 1509544800, "temp": 32 },
-                { "time": 1509548400, "temp": 32.5 },
-                { "time": 1509552000, "temp": 33 },
-                { "time": 1509555600, "temp": 33.5 },
-                { "time": 1509559200, "temp": 34 },
-                { "time": 1509562800, "temp": 34.5 },
-                { "time": 1509566400, "temp": 35 },
-                { "time": 1509570000, "temp": 35 },
-                { "time": 1509573600, "temp": 35 },
-                { "time": 1509577200, "temp": 35 },
-                { "time": 1509580800, "temp": 35 }],
+                { "time": 1509426000, "value": 35 },
+                { "time": 1509429600, "value": 34.5 },
+                { "time": 1509433200, "value": 34 },
+                { "time": 1509436800, "value": 33.5 },
+                { "time": 1509440400, "value": 33 },
+                { "time": 1509444000, "value": 32.5 },
+                { "time": 1509447600, "value": 32 },
+                { "time": 1509451200, "value": 31.5 },
+                { "time": 1509454800, "value": 31 },
+                { "time": 1509458400, "value": 30.5 },
+                { "time": 1509462000, "value": 30 },
+                { "time": 1509465600, "value": 29.5 },
+                { "time": 1509469200, "value": 29 },
+                { "time": 1509472800, "value": 28.5 },
+                { "time": 1509476400, "value": 28 },
+                { "time": 1509480000, "value": 27.5 },
+                { "time": 1509483600, "value": 27 },
+                { "time": 1509487200, "value": 26.5 },
+                { "time": 1509490800, "value": 26.4 },
+                { "time": 1509494400, "value": 26.4 },
+                { "time": 1509498000, "value": 26.4 },
+                { "time": 1509501600, "value": 26.5 },
+                { "time": 1509505200, "value": 26.8 },
+                { "time": 1509508800, "value": 27 },
+                { "time": 1509512400, "value": 27.5 },
+                { "time": 1509516000, "value": 28 },
+                { "time": 1509519600, "value": 28.5 },
+                { "time": 1509523200, "value": 29 },
+                { "time": 1509526800, "value": 29.5 },
+                { "time": 1509530400, "value": 30 },
+                { "time": 1509534000, "value": 30.5 },
+                { "time": 1509537600, "value": 31 },
+                { "time": 1509541200, "value": 31.5 },
+                { "time": 1509544800, "value": 32 },
+                { "time": 1509548400, "value": 32.5 },
+                { "time": 1509552000, "value": 33 },
+                { "time": 1509555600, "value": 33.5 },
+                { "time": 1509559200, "value": 34 },
+                { "time": 1509562800, "value": 34.5 },
+                { "time": 1509566400, "value": 35 },
+                { "time": 1509570000, "value": 35 },
+                { "time": 1509573600, "value": 35 },
+                { "time": 1509577200, "value": 35 },
+                { "time": 1509580800, "value": 35 }],
             dtWindow: [1508814800000, 1510117200000],
             width: 1200,
-            height: 50
+            height: 50,
+            yRange: [18, 36],
+            label: "CPB",
+            colorString: "#fffcec",
+            areaChartBackgroundColor: "#fff3e4"
         }
 
         this.handleRemoveBtnCLick = this.handleRemoveBtnCLick.bind(this)
@@ -123,7 +118,7 @@ class App extends Component {
 
         let newTemp = {
             time: newMaxTime,
-            temp: (Math.floor(Math.random() * 20) + 20)
+            value: (Math.floor(Math.random() * 20) + 20)
         }
 
         let newData = this.state.data
@@ -138,16 +133,19 @@ class App extends Component {
     }
 
     render() {
-        let { data, dtWindow, width, height } = this.state
+        let { data, dtWindow, width, height, yRange, label, colorString, areaChartBackgroundColor } = this.state
+        let dataClone = [...data]
+
         return (
             <>
-                <div>Pass in data in the form: {' { value: 1, type: "MEDS" } '}</div>
+                <div>Pass in data in the form: {' { time: 1509534000, value: 35 } '}</div>
                 <form onSubmit={this.handleSubmit}>
                     <input style={{
                         height: "50px",
                         width: "50%",
                         fontSize: "14pt"
                     }} placeholder="data" type="text" ref={(element) => { this.data = element }} />
+                    <br></br>
                     <button>ADD DATA</button>
                 </form>
                 <button onClick={this.handleRemoveBtnCLick}>REMOVE DATA</button>
@@ -155,7 +153,16 @@ class App extends Component {
                     data={data}
                     dtWindow={dtWindow}
                     width={width}
-                    height={height} />
+                    height={height}
+                    yRange={yRange}
+                    label={label}
+                    colorString={colorString}
+                    areaChartBackgroundColor={areaChartBackgroundColor} />
+                <div>
+                    {dataClone.reverse().map((d, i) => {
+                        return <div key={d.time + i}>{d.value}</div>
+                    })}
+                </div>
             </>
         )
     }

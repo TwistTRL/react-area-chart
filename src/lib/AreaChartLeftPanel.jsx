@@ -8,25 +8,16 @@ class AreaChartLeftPanel extends PureComponent {
         this.canvasH = this.props.canvasH
     }
 
-    componentDidMount() {
-        // this.meterCanvas = this.refs.meterCanvas
-        // this.meterCtx = this.meterCanvas.getContext("2d")
-    }
-
-    componentDidUpdate() {
-
-    }
-
     render() {
-        let { panelHeight, panelWidth } = this.props
+        let { panelHeight, panelWidth, label, colorString } = this.props
 
         const styles = {
             leftPanel: {
                 height: panelHeight + "px",
                 width: panelWidth + "px",
-                backgroundColor: "#fffcec"
+                backgroundColor: colorString
             },
-            cpbLabel: {
+            areaChartLabel: {
                 position: "absolute",
                 top: "25%",
                 left: "10%",
@@ -36,10 +27,10 @@ class AreaChartLeftPanel extends PureComponent {
         }
 
         return (
-            <div className="cpb-left-panel"
+            <div className="area-chart-left-panel"
                 style={styles.leftPanel}>
-                <div className="cpb-label"
-                    style={styles.cpbLabel}> CPB </div>
+                <div className="area-chart-label"
+                    style={styles.areaChartLabel}> {label} </div>
             </div>
         )
     }

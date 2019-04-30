@@ -56,7 +56,7 @@ class AreaChartBundle extends PureComponent {
     }
 
     render() {
-        let { dtWindow, width, height, data } = this.props
+        let { dtWindow, width, height, yRange, data, label, colorString, areaChartBackgroundColor } = this.props
         let plotWidth = width - LEFT_WIDTH - RIGHT_WIDTH
         let plotHeight = height - TOP_HEIGHT - BOTTOM_HEIGHT
         let minXInMSecs = 0, maxXInMSecs = 0
@@ -77,7 +77,8 @@ class AreaChartBundle extends PureComponent {
                 backgroundImage: "linear-gradient(to right, black, rgba(255,255,255,0))"
             },
             mainPlotWrapDiv: {
-                zIndex: -1
+                zIndex: -1,
+                backgroundColor: areaChartBackgroundColor
             }
         }
         // data = this.filterDataToDtWindow(data)
@@ -101,15 +102,15 @@ class AreaChartBundle extends PureComponent {
                 <PlotSubContainer>
                     <div style={styles.leftPanelGradShadow}>
                     </div>
-                    <AreaChartLeftPanel panelWidth={200} panelHeight={50} />
-                    <AreaChartYAxis canvasH={50} canvasW={LEFT_WIDTH} />
+                    <AreaChartLeftPanel label={label} colorString={colorString} panelWidth={200} panelHeight={50} />
+                    <AreaChartYAxis canvasH={50} canvasW={LEFT_WIDTH} yRange={yRange} />
                 </PlotSubContainer>
                 {/*Col PLOT*/}
                 <div style={styles.mainPlotWrapDiv}>
                     <PlotSubContainer>
                         {/* Main plot area interaction */}
                         <DateVerticalGridLines width={plotWidth} height={plotHeight} minX={minXInMSecs} maxX={maxXInMSecs} />
-                        <AreaChart data={data} width={plotWidth} height={plotHeight} dtWindow={dtWindow} />
+                        <AreaChart data={data} yRange={yRange} width={plotWidth} height={plotHeight} dtWindow={dtWindow} />
                     </PlotSubContainer>
                 </div>
                 {/*Col RIGHT*/}

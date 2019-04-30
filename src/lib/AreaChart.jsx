@@ -14,13 +14,13 @@ class AreaChart extends PureComponent {
     }
 
     componentDidMount() {
-        this.cpbChartCanvas = this.refs.cpbChartCanvas
-        this.cpbChartCtx = this.cpbChartCanvas.getContext("2d")
-        this.drawCPBChart(this.cpbChartCtx)
+        this.areaChartCanvas = this.refs.areaChartCanvas
+        this.areaChartCtx = this.areaChartCanvas.getContext("2d")
+        this.drawCPBChart(this.areaChartCtx)
     }
 
     componentDidUpdate() {
-        this.drawCPBChart(this.cpbChartCtx)
+        this.drawCPBChart(this.areaChartCtx)
     }
 
     drawCPBChart = (ctx) => {
@@ -31,13 +31,14 @@ class AreaChart extends PureComponent {
         let maxX = this.props.dtWindow[1] / 1000
         let height = this.canvasH
         let data = this.props.data
+        let yRange = this.props.yRange
 
         // first plot the stroke
         ctx.lineWidth = 4
         ctx.strokeStyle = "rgba(128,128,128,0.7)"
         data.forEach(d => {
             domX = toDomXCoord_Linear(this.canvasW, minX, maxX, d["time"])
-            let domY = toDomYCoord_Linear(this.canvasH, 12, 43, d["temp"])
+            let domY = toDomYCoord_Linear(this.canvasH, yRange[0] - yRange[0] * 0.2, yRange[1] + yRange[1] * 0.2, d["value"])
             ctx.lineTo(domX, domY)
         })
         ctx.stroke()
@@ -56,8 +57,8 @@ class AreaChart extends PureComponent {
         // let minXInSecs = minX / 1000, maxXInSecs = maxX / 1000
         return (
             <canvas
-                className="cpb-chart-canvas"
-                ref="cpbChartCanvas"
+                className="area-chart-canvas"
+                ref="areaChartCanvas"
                 width={this.canvasW}
                 height={this.canvasH}
             />
