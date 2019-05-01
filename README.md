@@ -1,4 +1,4 @@
-## Available Scripts
+## Required parameters
 ```javascript
 <AreaChartBundle
                     data={data}
