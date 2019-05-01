@@ -39,19 +39,19 @@ class AreaChart extends PureComponent {
         let minMaxDiff = yRange[1] - yRange[0]
         data.forEach(d => {
             domX = toDomXCoord_Linear(this.canvasW, minX, maxX, d["time"])
-            let domY = toDomYCoord_Linear(this.canvasH, yRange[0] - minMaxDiff * 0.2, yRange[1] + minMaxDiff * 0.3, d["value"])
+            let domY = toDomYCoord_Linear(this.canvasH, yRange[0] - minMaxDiff * 0.3, yRange[1] + minMaxDiff * 0.4, d["value"])
             ctx.lineTo(domX, domY)
         })
         ctx.stroke()
         // now define the bottom of the filled area
-        const maxY = height; //Math.max.apply(null, pts.map(pt=>pt.y));
+        const maxY = height //Math.max.apply(null, pts.map(pt=>pt.y));
         // draw the missing parts
         domX = toDomXCoord_Linear(this.canvasW, minX, maxX, data[data.length - 1]["time"])
-        ctx.lineTo(domX, maxY); // bottom-right
+        ctx.lineTo(domX, maxY) // bottom-right
         domX = toDomXCoord_Linear(this.canvasW, minX, maxX, data[0]["time"])
-        ctx.lineTo(domX, maxY); // bottom-left
+        ctx.lineTo(domX, maxY) // bottom-left
         ctx.fillStyle = "rgba(192,192,192,0.4)"
-        ctx.fill(); // will close the path for us
+        ctx.fill() // will close the path for us
     }
 
     render() {

@@ -55,7 +55,7 @@ class App extends Component {
             dtWindow: [1508814800000, 1510117200000],
             width: 1200,
             height: 50,
-            yRange: [18, 38],
+            yRange: [4, 38],
             label: "CPB",
             colorString: "#fffcec",
             areaChartBackgroundColor: "#fff3e4"
