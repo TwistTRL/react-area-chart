@@ -46,21 +46,8 @@ class AreaChartYAxis extends PureComponent {
 
         // draw the label
         let posDomY = this.toDomYCoord_Linear(this.canvasH, yRange[0] - minMaxDiff * 0.3, yRange[1] + minMaxDiff * 0.4, yRange[0])
-        if (yRange[0] < 100) {
-            xOffset = 25
-        }
-        if (yRange[0] < 10) {
-            xOffset = 15
-        }
-        
         ctx.fillText(yRange[0], this.canvasW - xOffset, posDomY)
         posDomY = this.toDomYCoord_Linear(this.canvasH, yRange[0] - minMaxDiff * 0.3, yRange[1] + minMaxDiff * 0.4, yRange[1])
-        if (yRange[1] < 100) {
-            xOffset = 25
-        }
-        if (yRange[1] < 10) {
-            xOffset = 15
-        }
         ctx.fillText(yRange[1], this.canvasW - xOffset, posDomY)
         ctx.stroke()
     }
