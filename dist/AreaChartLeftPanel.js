@@ -50,7 +50,7 @@ var AreaChartLeftPanel = function (_PureComponent) {
                     backgroundColor: colorString
                 },
                 areaChartLabel: {
-                    marginLeft: "15%",
+                    marginLeft: "20px",
                     lineHeight: panelHeight + "px",
                     color: '#373c62',
                     fontWeight: '800',
