@@ -46,7 +46,7 @@ var AreaChart = function (_PureComponent) {
             var minMaxDiff = yRange[1] - yRange[0];
             data.forEach(function (d) {
                 domX = (0, _PlottingUtils.toDomXCoord_Linear)(_this.canvasW, minX, maxX, d["time"]);
-                var domY = (0, _PlottingUtils.toDomYCoord_Linear)(_this.canvasH, yRange[0] - minMaxDiff * 0.2, yRange[1] + minMaxDiff * 0.3, d["value"]);
+                var domY = (0, _PlottingUtils.toDomYCoord_Linear)(_this.canvasH, yRange[0] - minMaxDiff * 0.3, yRange[1] + minMaxDiff * 0.4, d["value"]);
                 ctx.lineTo(domX, domY);
             });
             ctx.stroke();

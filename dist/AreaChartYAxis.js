@@ -47,12 +47,26 @@ var AreaChartYAxis = function (_PureComponent) {
             ctx.fillStyle = '#373c62';
 
             var minMaxDiff = yRange[1] - yRange[0];
+            var xOffset = 25;
 
             // draw the label
-            var posDomY = _this.toDomYCoord_Linear(_this.canvasH, yRange[0] - minMaxDiff * 0.2, yRange[1] + minMaxDiff * 0.3, yRange[0]);
-            ctx.fillText(yRange[0], _this.canvasW - 25, posDomY);
-            posDomY = _this.toDomYCoord_Linear(_this.canvasH, yRange[0] - minMaxDiff * 0.2, yRange[1] + minMaxDiff * 0.3, yRange[1]);
-            ctx.fillText(yRange[1], _this.canvasW - 25, posDomY);
+            var posDomY = _this.toDomYCoord_Linear(_this.canvasH, yRange[0] - minMaxDiff * 0.3, yRange[1] + minMaxDiff * 0.4, yRange[0]);
+            if (yRange[0] < 100) {
+                xOffset = 25;
+            }
+            if (yRange[0] < 10) {
+                xOffset = 15;
+            }
+
+            ctx.fillText(yRange[0], _this.canvasW - xOffset, posDomY);
+            posDomY = _this.toDomYCoord_Linear(_this.canvasH, yRange[0] - minMaxDiff * 0.3, yRange[1] + minMaxDiff * 0.4, yRange[1]);
+            if (yRange[1] < 100) {
+                xOffset = 25;
+            }
+            if (yRange[1] < 10) {
+                xOffset = 15;
+            }
+            ctx.fillText(yRange[1], _this.canvasW - xOffset, posDomY);
             ctx.stroke();
         };
 
