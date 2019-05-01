@@ -41,12 +41,13 @@ class AreaChartYAxis extends PureComponent {
         ctx.textBaseline = "middle";
         ctx.fillStyle = '#373c62'
 
-        // draw the label
-        let posDomY = this.toDomYCoord_Linear(this.canvasH, yRange[0] - 5, yRange[1] + 5, yRange[0])
-        ctx.fillText(yRange[0], this.canvasW - 25, posDomY)
-        posDomY = this.toDomYCoord_Linear(this.canvasH, yRange[0] - 5, yRange[1] + 5, yRange[1])
-        ctx.fillText(yRange[1], this.canvasW - 25, posDomY)
+        let minMaxDiff = yRange[1] - yRange[0]
 
+        // draw the label
+        let posDomY = this.toDomYCoord_Linear(this.canvasH, yRange[0] - minMaxDiff * 0.2, yRange[1] + minMaxDiff * 0.3, yRange[0])
+        ctx.fillText(yRange[0], this.canvasW - 25, posDomY)
+        posDomY = this.toDomYCoord_Linear(this.canvasH, yRange[0] - minMaxDiff * 0.2, yRange[1] + minMaxDiff * 0.3, yRange[1])
+        ctx.fillText(yRange[1], this.canvasW - 25, posDomY)
         ctx.stroke()
     }
 

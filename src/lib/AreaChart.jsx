@@ -36,9 +36,10 @@ class AreaChart extends PureComponent {
         // first plot the stroke
         ctx.lineWidth = 4
         ctx.strokeStyle = "rgba(128,128,128,0.7)"
+        let minMaxDiff = yRange[1] - yRange[0]
         data.forEach(d => {
             domX = toDomXCoord_Linear(this.canvasW, minX, maxX, d["time"])
-            let domY = toDomYCoord_Linear(this.canvasH, yRange[0] - 5, yRange[1] + 5, d["value"])
+            let domY = toDomYCoord_Linear(this.canvasH, yRange[0] - minMaxDiff * 0.2, yRange[1] + minMaxDiff * 0.3, d["value"])
             ctx.lineTo(domX, domY)
         })
         ctx.stroke()
