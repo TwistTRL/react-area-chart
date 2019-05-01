@@ -41,7 +41,7 @@ var AreaChart = function (_PureComponent) {
             var yRange = _this.props.yRange;
 
             // first plot the stroke
-            ctx.lineWidth = 4;
+            ctx.lineWidth = 2;
             ctx.strokeStyle = "rgba(128,128,128,0.7)";
             var minMaxDiff = yRange[1] - yRange[0];
             data.forEach(function (d) {
