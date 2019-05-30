@@ -21,11 +21,11 @@ class AreaChartYAxis extends PureComponent {
         this.drawYAxis(this.areaChartYAxisCtx);
     }
 
-    toDomYCoord_Linear = (height, minY, maxY, dataY) => {
+    toDomYCoord_Linear(height, minY, maxY, dataY) {
         return height - (dataY - minY) / ((maxY - minY) / height);
     }
 
-    drawYAxis = (ctx) => {
+    drawYAxis(ctx) {
         let yRange = this.props.yRange
         // clear canvas
         ctx.canvas.width = ctx.canvas.width

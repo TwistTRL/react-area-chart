@@ -41,7 +41,7 @@ class AreaChartBundle extends PureComponent {
     }
 
     // unix time in ms
-    getDaysBetweenDates = (d0, d1) => {
+    getDaysBetweenDates(d0, d1) {
         var msPerDay = 8.64e7
 
         // Copy dates so don't mess them up

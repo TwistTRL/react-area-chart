@@ -23,7 +23,7 @@ class AreaChart extends PureComponent {
         this.drawCPBChart(this.areaChartCtx)
     }
 
-    drawCPBChart = (ctx) => {
+    drawCPBChart(ctx) {
         // let { minX, maxX, minY, maxY, data } = this.props
         ctx.canvas.width = ctx.canvas.width
         let domX
@@ -43,9 +43,9 @@ class AreaChart extends PureComponent {
             ctx.lineTo(domX, domY)
         })
         ctx.stroke()
-        // now define the bottom of the filled area
+            // now define the bottom of the filled area
         const maxY = height //Math.max.apply(null, pts.map(pt=>pt.y));
-        // draw the missing parts
+            // draw the missing parts
         domX = toDomXCoord_Linear(this.canvasW, minX, maxX, data[data.length - 1]["time"])
         ctx.lineTo(domX, maxY) // bottom-right
         domX = toDomXCoord_Linear(this.canvasW, minX, maxX, data[0]["time"])
@@ -56,12 +56,11 @@ class AreaChart extends PureComponent {
 
     render() {
         // let minXInSecs = minX / 1000, maxXInSecs = maxX / 1000
-        return (
-            <canvas
-                className="area-chart-canvas"
-                ref="areaChartCanvas"
-                width={this.canvasW}
-                height={this.canvasH}
+        return ( 
+            <canvas className = "area-chart-canvas"
+            ref = "areaChartCanvas"
+            width = { this.canvasW }
+            height = { this.canvasH }
             />
         )
     }
