@@ -66,7 +66,7 @@ function (_PureComponent) {
         ref: this.ref,
         width: width,
         height: height
-      }, rest));
+      }, rest), " ");
     }
   }, {
     key: "componentDidMount",
