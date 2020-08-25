@@ -9,7 +9,7 @@
         "plot-utils": "github:TwistTRL/plot-utils",
         "react": "^16.8.6",
         "react-dom": "^16.8.6",
-        "react-scripts": "3.0.0"
+        "react-scripts": "^3.0.0"
     },
     "scripts": {
         "start": "react-scripts start",
@@ -36,16 +36,16 @@
         ]
     },
     "devDependencies": {
-        "@babel/cli": "^7.4.4",
-        "@babel/core": "^7.4.5",
-        "@babel/plugin-proposal-class-properties": "^7.4.4",
-        "@babel/preset-env": "^7.4.5",
-        "@babel/preset-react": "^7.0.0",
-        "gh-pages": "^2.0.1",
+        "@babel/cli": "^7.10.5",
+        "@babel/core": "^7.11.4",
+        "@babel/plugin-proposal-class-properties": "^7.10.4",
+        "@babel/preset-env": "^7.11.0",
+        "@babel/preset-react": "^7.10.4",
+        "gh-pages": "^2.2.0",
         "proptypes": "^1.1.0",
         "react": "^16.8.6",
         "react-dom": "^16.8.6",
-        "react-scripts": "3.0.0"
+        "react-scripts": "^3.0.0"
     },
     "repository": {
         "type": "git",
